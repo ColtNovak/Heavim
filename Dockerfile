@@ -1,5 +1,10 @@
-FROM archlinuxarm/base-devel:latest
+FROM --platform=linux/amd64 archlinux:base-devel
 
+# Enable cross-architecture emulation
+RUN pacman -Syu --noconfirm qemu-user-static && \
+    systemctl enable systemd-binfmt.service
+
+# Original x86 setup
 RUN rm -rf /root/.config/nvim
 RUN pacman -Syu --noconfirm --needed \
     git curl neovim nodejs npm python-pip \
@@ -14,9 +19,10 @@ RUN mkdir -p /root/.config/nvim \
 RUN nvim --headless "+Lazy sync" +qa \
     && nvim --headless "+MasonInstallAll" +qa
 
-RUN curl -L https://github.com/tsl0922/ttyd/releases/download/1.7.3/ttyd.arm64 -o /usr/bin/ttyd \
+# Original x86_64 binary
+RUN curl -L https://github.com/tsl0922/ttyd/releases/download/1.7.3/ttyd.x86_64 -o /usr/bin/ttyd \
     && chmod +x /usr/bin/ttyd
 
 WORKDIR /workspace
 EXPOSE 8080
-CMD ["ttyd", "-t", "disableReconnect=true", "-p", "8080", "bash", "-ic", "nvim"]
+CMD ["ttyd", "-p", "8080", "nvim"]
