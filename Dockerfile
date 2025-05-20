@@ -6,7 +6,7 @@ RUN pacman -Syu --noconfirm --needed \
     python-pynvim fastfetch \
     && rm -rf /var/cache/pacman/pkg/*
 RUN mkdir -p /root/.config/nvim \
-    && git clone --depth 1 https://github.com/ColtNovak/eeeeeee.git /root/.config/nvim \
+    && git clone --depth 1 https://github.com/ColtNovak/Heavim-neovim-config.git /root/.config/nvim \
     && rm -rf /root/.config/nvim/.git
 RUN nvim --headless "+Lazy sync" +qa \
     && nvim --headless "+MasonInstallAll" +qa
