@@ -1,4 +1,4 @@
-FROM archlinuxarm/base-devel:latest
+FROM agners/archlinuxarm-arm32v7:latest
 
 RUN pacman -Syu --noconfirm --needed \
     git curl neovim nodejs npm python-pip \
