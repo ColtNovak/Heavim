@@ -1,5 +1,13 @@
 # Heavim - a W.I.P neovim config
 I have been working on this for a little bit at school , hope you enjoy
+# Information
+  * **Package Manager** - Lazy.nvim
+  * **Finder** - Telescope
+  * **Keybind Manager** - WhichKey
+  * **Bottom Line** - LuaLine
+  * **Terminal** - ToggleTerm
+  * **Theme** - Catpuccin Mocha
+  * **Terminal** - ToggleTerm
 
 ## Features!
 * File explorer
