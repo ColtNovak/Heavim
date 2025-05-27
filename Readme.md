@@ -1,4 +1,6 @@
 ![image](https://github.com/user-attachments/assets/4c3d65a7-c4bf-4514-9e9b-88adca0c5d85)
+![image](https://github.com/user-attachments/assets/823d9341-54b6-435c-a3a2-8e5043ac24e7)
+
 # Heavim - a W.I.P neovim config
 I have been working on this for a little bit at school , hope you enjoy
 # Information
